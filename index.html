@@ -91,13 +91,18 @@ nav a:hover{
 }
 
 .hero-img img{
-    width: 380px;
-    border-radius: 30px;        /* Circle hataya gaya */
+    width: 400px;
+    border-radius: 20px;     /* Bahut kam round - almost rectangular */
     border: 8px solid #00ff88;
     box-shadow: 
-        0 0 50px #00ff88,
-        0 0 120px rgba(0, 255, 136, 0.7);
+        0 0 60px #00ff88,
+        0 0 140px rgba(0, 255, 136, 0.8);
     display: block;
+    transition: all 0.4s ease;
+}
+
+.hero-img:hover img{
+    transform: scale(1.03);
 }
 
 .hero-text{
@@ -212,7 +217,7 @@ footer{
 @media(max-width:768px){
     .hero-text h1{font-size:2.5rem;}
     .hero{flex-direction:column;text-align:center;}
-    .hero-img img{width:280px;}
+    .hero-img img{width:300px;}
     nav{flex-direction:column;gap:15px;}
 }
 </style>
@@ -260,7 +265,8 @@ Follow X
 
 </section>
 
-<!-- About -->
+<!-- About, Manifesto, Roadmap aur Footer same rahega -->
+
 <section id="about">
 <h2 class="section-title">⚡ Escape The Trap</h2>
 <div class="card">
@@ -271,7 +277,6 @@ We are here to build, raid and grow together.
 </div>
 </section>
 
-<!-- Manifesto -->
 <section id="manifesto">
 <h2 class="section-title">👹 The Manifesto</h2>
 <div class="card">
@@ -282,25 +287,12 @@ Only builders, community and relentless energy.
 </div>
 </section>
 
-<!-- Roadmap -->
 <section id="roadmap">
 <h2 class="section-title">🚀 Roadmap</h2>
-
 <div class="roadmap">
-<div class="step">
-<h3>Phase 1</h3>
-<p>Community Growth + Branding</p>
-</div>
-
-<div class="step">
-<h3>Phase 2</h3>
-<p>June 10 Launch + Raids</p>
-</div>
-
-<div class="step">
-<h3>Phase 3</h3>
-<p>Expansion + Ecosystem</p>
-</div>
+<div class="step"><h3>Phase 1</h3><p>Community Growth + Branding</p></div>
+<div class="step"><h3>Phase 2</h3><p>June 10 Launch + Raids</p></div>
+<div class="step"><h3>Phase 3</h3><p>Expansion + Ecosystem</p></div>
 </div>
 </section>
 
@@ -309,7 +301,7 @@ Only builders, community and relentless energy.
 </footer>
 
 <script>
-// Countdown: 10 June 2026, 7 PM Paris time (GMT+2)
+// Countdown same
 const countdownEl = document.getElementById("countdown");
 const targetDate = new Date("June 10, 2026 19:00:00 GMT+0200");
 
@@ -327,8 +319,7 @@ function updateCountdown() {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    countdownEl.innerHTML =
-        `⏳ Launch In: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    countdownEl.innerHTML = `⏳ Launch In: ${days}d ${hours}h ${minutes}m ${seconds}s`;
 }
 
 setInterval(updateCountdown, 1000);
