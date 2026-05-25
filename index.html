@@ -21,7 +21,7 @@ body{
     overflow-x:hidden;
 }
 
-/* Glow */
+/* Glow Effects */
 body::before{
     content:'';
     position:fixed;
@@ -91,10 +91,13 @@ nav a:hover{
 }
 
 .hero-img img{
-    width:340px;
-    border-radius:50%;
-    border:4px solid #00ff88;
-    box-shadow:0 0 35px #00ff88;
+    width: 380px;
+    border-radius: 30px;        /* Circle hataya gaya */
+    border: 8px solid #00ff88;
+    box-shadow: 
+        0 0 50px #00ff88,
+        0 0 120px rgba(0, 255, 136, 0.7);
+    display: block;
 }
 
 .hero-text{
@@ -207,10 +210,10 @@ footer{
 }
 
 @media(max-width:768px){
-.hero-text h1{font-size:2.5rem;}
-.hero{flex-direction:column;text-align:center;}
-.hero-img img{width:250px;}
-nav{flex-direction:column;gap:15px;}
+    .hero-text h1{font-size:2.5rem;}
+    .hero{flex-direction:column;text-align:center;}
+    .hero-img img{width:280px;}
+    nav{flex-direction:column;gap:15px;}
 }
 </style>
 </head>
