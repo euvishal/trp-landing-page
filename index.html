@@ -21,7 +21,7 @@ body{
     overflow-x:hidden;
 }
 
-/* Background glow */
+/* Glow */
 body::before{
     content:'';
     position:fixed;
@@ -116,7 +116,7 @@ nav a:hover{
 .hero-text p{
     color:#ccc;
     line-height:1.7;
-    margin-bottom:30px;
+    margin-bottom:20px;
 }
 
 .btn{
@@ -142,6 +142,13 @@ nav a:hover{
 
 .btn:hover{
     transform:translateY(-3px);
+}
+
+/* Countdown */
+#countdown{
+    font-size:1.2rem;
+    color:#ffd700;
+    margin-top:15px;
 }
 
 /* Sections */
@@ -200,23 +207,10 @@ footer{
 }
 
 @media(max-width:768px){
-
-.hero-text h1{
-    font-size:2.5rem;
-}
-
-.hero{
-    text-align:center;
-}
-
-.hero-img img{
-    width:250px;
-}
-
-nav{
-    flex-direction:column;
-    gap:15px;
-}
+.hero-text h1{font-size:2.5rem;}
+.hero{flex-direction:column;text-align:center;}
+.hero-img img{width:250px;}
+nav{flex-direction:column;gap:15px;}
 }
 </style>
 </head>
@@ -245,14 +239,20 @@ nav{
 <h2>BREAK THE TRAP • BUILD THE LEGEND</h2>
 
 <p>
-Not just another meme coin.  
-TRAP COIN is a movement of builders, raiders and believers ready to break free from the trap.
-Launching June 10 on Solana.
+Not just another meme coin. TRAP COIN is a movement of builders, raiders and believers ready to break free from the trap.
+Launching 10 June 2026.
 </p>
 
-<a href="https://t.me/realtrparmy" class="btn telegram">Join Telegram</a>
+<div id="countdown">Loading countdown...</div>
 
-<a href="https://x.com/real1trapcoin?s=21" class="btn xbtn">Follow X</a>
+<a href="https://t.me/realtrparmy" class="btn telegram" target="_blank" rel="noopener noreferrer">
+Join Telegram
+</a>
+
+<a href="https://x.com/real1trapcoin?s=21" class="btn xbtn" target="_blank" rel="noopener noreferrer">
+Follow X
+</a>
+
 </div>
 
 </section>
@@ -260,11 +260,9 @@ Launching June 10 on Solana.
 <!-- About -->
 <section id="about">
 <h2 class="section-title">⚡ Escape The Trap</h2>
-
 <div class="card">
 <p>
 TRAP COIN was built for people tired of fake hype and passive communities.
-We are not here to run.
 We are here to build, raid and grow together.
 </p>
 </div>
@@ -273,14 +271,10 @@ We are here to build, raid and grow together.
 <!-- Manifesto -->
 <section id="manifesto">
 <h2 class="section-title">👹 The Manifesto</h2>
-
 <div class="card">
 <p>
-No fake hype.  
-No paid shilling.  
-No empty promises.  
+No fake hype. No paid shilling. No empty promises.
 Only builders, community and relentless energy.
-TRAP COIN is about breaking the trap and creating something bigger than ourselves.
 </p>
 </div>
 </section>
@@ -290,7 +284,6 @@ TRAP COIN is about breaking the trap and creating something bigger than ourselve
 <h2 class="section-title">🚀 Roadmap</h2>
 
 <div class="roadmap">
-
 <div class="step">
 <h3>Phase 1</h3>
 <p>Community Growth + Branding</p>
@@ -305,13 +298,39 @@ TRAP COIN is about breaking the trap and creating something bigger than ourselve
 <h3>Phase 3</h3>
 <p>Expansion + Ecosystem</p>
 </div>
-
 </div>
 </section>
 
 <footer>
 👹 TRAP COIN • Break The Trap • Build The Legend
 </footer>
+
+<script>
+// Countdown: 10 June 2026, 7 PM Paris time (GMT+2)
+const countdownEl = document.getElementById("countdown");
+const targetDate = new Date("June 10, 2026 19:00:00 GMT+0200");
+
+function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = targetDate.getTime() - now;
+
+    if (distance <= 0) {
+        countdownEl.innerHTML = "🚀 TRAP COIN IS LIVE!";
+        return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    countdownEl.innerHTML =
+        `⏳ Launch In: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+</script>
 
 </body>
 </html>
